@@ -1,0 +1,138 @@
+.ProfileTab {
+    margin-top: 30px;
+}
+
+.profile-cover-img {
+    width: 900px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 48px 0 0 0;
+}
+.profile-container {
+    position: relative;
+    display: flex;
+}
+.profile-avatar-img {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    top: -80px;
+    left: 40px;
+}
+
+.profile-avatar-img:hover {
+    cursor: pointer;
+}
+
+.ProfileTab .coin-label {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 46px;
+    margin-top: 20px;
+    display: block;
+}
+
+.profile-avatar-img:hover ~ .profile-change-avatar-zone {
+    cursor: pointer;
+    display: flex !important;
+}
+
+.profile-change-cover-button {
+    position: absolute;
+    top: -60px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    outline: 1px solid rgb(155, 155, 155);
+    border-radius: 4px;
+    border: none;
+}
+
+.profile-change-cover-button:hover {
+    cursor: pointer;
+    background-color: rgb(255 255 255 / 10%);
+}
+
+.profile-change-cover-icon {
+    width: 24px;
+    height: 24px;
+    color: rgb(155, 155, 155);
+}
+
+.profile-name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+    position: absolute;
+    top: 30px;
+    left: 260px;
+}
+
+.profile-left {
+    padding-top: 150px;
+    padding-left: 40px;
+}
+
+.profile-left-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 46px;
+    margin: 0;
+    color: var(--text-color-primary);
+    margin-top: 30px;
+}
+
+.profile-right {
+    padding-top: 150px;
+    margin-left: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-input {
+    height: 40px;
+    margin-top: 30px;
+    font-size: 1.4rem;
+    padding: 2px 12px;
+    border: 1px solid lightgray;
+    outline: none;
+    width: 350px;
+    font-weight: 600;
+    border-radius: 12px;
+    color: var(--text-color-primary);
+    box-shadow: -2px 2px 2px 2px rgb(0 0 0 /3%);
+}
+
+.profile-username-input:hover {
+    cursor: default;
+}
+
+.profile-save-button {
+    margin-top: 30px;
+    border-radius: 12px;
+}
+
+.profile-change-avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350;
+}
+
+.profile-change-avatar-img {
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 50px;
+}
+
+.profile-upload-button {
+    margin-top: 40px;
+    margin-left: 20px;
+}

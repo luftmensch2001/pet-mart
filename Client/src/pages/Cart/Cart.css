@@ -1,0 +1,233 @@
+.Cart {
+}
+
+.Cart .page-title {
+    padding-top: 50px;
+    display: block;
+    font-size: 4.5rem;
+}
+
+.Cart .total-count-label {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color-secondary);
+}
+
+.Cart .cart-zone {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Cart .checkout-zone {
+    width: 27%;
+}
+
+.Cart .cart-products-container {
+    width: 68%;
+}
+
+.Cart .cart-product-heading {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    padding-left: 8px;
+}
+
+.Cart .cart-product-heading span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+}
+
+.Cart .cart-product-heading .c1 {
+    width: 40%;
+}
+
+.Cart .cart-product-heading .c2 {
+    width: 20%;
+}
+
+.Cart .cart-product-heading .c3 {
+    width: 20%;
+}
+
+.Cart .cart-product-heading .c4 {
+    width: 15%;
+}
+
+.Cart .cart-product-heading .c5 {
+    width: 5%;
+}
+
+.Cart .cart-product-list {
+}
+
+.Cart .cart-bottom-buttons {
+    margin-top: 24px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.Cart .cart-bottom-buttons button {
+    height: 45px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    padding: 0 12px;
+    border: none;
+    border-radius: 6px;
+    align-items: center;
+}
+
+.Cart .cart-bottom-buttons button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.Cart .cart-continue-shopping-button {
+    background-color: #e4f6ed;
+    color: var(--primary-color);
+}
+
+.Cart .cart-update-button {
+    background-color: #f59758;
+    color: #fff;
+}
+
+.Cart .cart-button-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.Cart .checkout-zone {
+    height: fit-content;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 20px;
+}
+
+.Cart .bill-wrapper {
+    margin-top: 30px;
+    border-radius: 8px;
+    height: fit-content;
+    border: 1px solid lightgray;
+    padding: 0 8px 10px;
+}
+
+.Cart .checkout-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding: 24px 0;
+}
+
+.Cart .checkout-label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+}
+
+.Cart .checkout-value {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-color-primary);
+}
+
+.Cart .checkout-value-total {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+}
+
+.Cart .checkout-button {
+    width: 100%;
+    border-radius: 6px;
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+}
+
+.Cart .checkout-button-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    margin-top: -4px;
+}
+
+.Cart .coupon-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Cart .coupon-input {
+    width: 55%;
+    height: 40px;
+    font-size: 1.3rem;
+    outline: none;
+    border: 1px solid lightgray;
+    padding: 0 8px;
+    border-radius: 6px;
+}
+
+.Cart .coupon-apply-button {
+    height: 40px;
+    width: 35%;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(91, 182, 244);
+}
+
+.Cart .coupon-icon {
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+}
+
+.EmptyCart {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.EmptyCart img {
+    height: 300px;
+}
+
+.EmptyCart .text-content {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color-secondary);
+}
+
+.EmptyCart .cart-continue-shopping-button {
+    cursor: pointer;
+    margin-top: 30px;
+    height: 45px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    padding: 0 12px;
+    border: none;
+    border-radius: 6px;
+    align-items: center;
+    background-color: #e4f6ed;
+    color: var(--primary-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}

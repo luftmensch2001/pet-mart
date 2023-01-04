@@ -1,0 +1,25 @@
+.NoLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.NoLogin img {
+    width: max(400px, 45%);
+}
+
+.NoLogin span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color-primary);
+    margin-top: 30px;
+    user-select: none;
+}
+
+.NoLogin .login-now-button {
+    margin-top: 30px;
+    border-radius: 8px;
+    padding: 0 12px;
+}

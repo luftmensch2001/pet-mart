@@ -1,0 +1,201 @@
+.StoreTab {
+    margin-top: 30px;
+    width: 900px;
+}
+
+.store-top {
+    width: 100%;
+    display: flex;
+}
+
+.store-add-product-button {
+    border-radius: 8px;
+    padding: 0 12px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.store-voucher-button {
+    border-radius: 8px;
+    padding: 0 16px;
+    height: 45px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(91, 182, 244);
+}
+
+.store-add-product-button .icon,
+.store-voucher-button .icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+
+.store-search-container {
+    margin-right: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.store-search-input {
+    height: 45px;
+    width: 350px;
+    border-radius: 24px;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    box-shadow: -1px 1px 2px 2px rgb(0 0 0 /5%);
+}
+
+.store-search-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 24px;
+    position: absolute;
+    right: 0;
+}
+
+.store-search-icon {
+    width: 22px;
+    height: 22px;
+    margin-top: 3px;
+}
+
+.store-product-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.StoreTab .product-item {
+    margin-top: 40px;
+    height: 180px;
+    width: 47%;
+    min-width: 400px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) -2px 9px 25px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.StoreTab .product-item img {
+    width: 150px;
+    min-width: 150px;
+    height: 150px;
+    margin-left: 10px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.StoreTab .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    margin: 0 8px;
+    flex: 1;
+}
+
+.product-head-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.StoreTab .product-name {
+    margin-top: 12px;
+    font-size: 1.5rem;
+    line-height: 24px;
+    font-weight: bold;
+    color: var(--text-color-primary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.StoreTab .product-sell {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color-secondary);
+}
+
+.StoreTab .product-all-price {
+}
+
+.StoreTab .product-price {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.StoreTab .product-old-price {
+    color: var(--text-color-secondary);
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+.StoreTab .product-bottom-buttons {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 16px;
+}
+
+.StoreTab .product-bottom-buttons .icon {
+    width: 16px;
+    height: 16px;
+}
+
+.StoreTab .product-bottom-buttons button {
+    width: 30px;
+    height: 50%;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.StoreTab .product-bottom-buttons .edit-link {
+    width: 30px;
+    height: 50%;
+}
+
+.StoreTab .product-bottom-buttons .edit-button {
+    color: rgb(91, 182, 244) !important;
+    height: 100%;
+    border-radius: 0 16px 0 0 !important;
+}
+
+.StoreTab .product-bottom-buttons .edit-button:hover {
+    cursor: pointer !important;
+    background-color: rgb(91, 182, 244) !important;
+    color: #fff !important;
+}
+
+.StoreTab .product-bottom-buttons button:last-child {
+    color: rgb(249, 59, 59);
+    border-radius: 0 0 16px 0;
+}
+
+.StoreTab .product-bottom-buttons button:last-child:hover {
+    background-color: rgb(249, 59, 59);
+    color: #fff;
+}
+
+.StoreTab .no-product {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color-primary);
+    display: block;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    line-height: 400px;
+}

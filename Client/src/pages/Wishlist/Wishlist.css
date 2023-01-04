@@ -1,0 +1,116 @@
+.Wishlist .page-title {
+    padding-top: 30px;
+    display: block;
+    font-size: 4.5rem;
+}
+
+.Wishlist .total-count-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color-secondary);
+}
+
+.Wishlist .wishlist-container {
+    margin-top: 80px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: -1px 1px 2px 2px rgb(0 0 0 /5%);
+}
+
+.Wishlist .wishlist-header {
+    background-color: #f9fafc;
+    width: 100%;
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 0.5px solid lightgray;
+}
+
+.Wishlist .wishlist-header-field {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+    text-align: center;
+}
+
+.Wishlist .wishlist-header-field.c1 {
+    width: 40%;
+}
+
+.Wishlist .wishlist-header-field.c2 {
+    width: 25%;
+}
+
+.Wishlist .wishlist-header-field.c3 {
+    width: 20%;
+}
+
+.Wishlist .wishlist-header-field.c4 {
+    width: 15%;
+}
+
+.Wishlist .wishlist-list {
+}
+
+.Wishlist .wishlist-search-container {
+    position: relative;
+    margin-top: 20px;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.Wishlist .wishlist-search-input {
+    height: 45px;
+    width: 300px;
+    border-radius: 24px;
+    outline: none;
+    border: none;
+    padding-left: 40px;
+    box-shadow: -1px 0.5px 3px 2px rgb(0 0 0 /5%);
+}
+
+.Wishlist .wishlist-search-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    position: absolute;
+    left: 10px;
+}
+
+.EmptyWishlist {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.EmptyWishlist img {
+    height: 300px;
+}
+
+.EmptyWishlist .text-content {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color-secondary);
+}
+
+.EmptyWishlist .cart-continue-shopping-button {
+    cursor: pointer;
+    margin-top: 30px;
+    height: 45px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    padding: 0 12px;
+    border: none;
+    border-radius: 6px;
+    align-items: center;
+    background-color: #e4f6ed;
+    color: var(--primary-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}

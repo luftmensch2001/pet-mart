@@ -1,0 +1,115 @@
+.WishlistProduct {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+}
+
+.WishlistProduct:hover {
+    cursor: pointer;
+    background-color: #fdfdfd;
+}
+
+.WishlistProduct:last-child {
+    border-bottom: none;
+}
+
+.WishlistProduct .wl-product-info {
+    display: flex;
+    align-items: center;
+}
+
+.WishlistProduct .wl-product-image {
+    margin-left: 12px;
+    width: 100px;
+    height: 120px;
+    min-width: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.WishlistProduct .wl-product-name {
+    font-size: 1.4rem;
+    line-height: 30px;
+    font-weight: 700;
+    color: var(--text-color-primary);
+    text-align: justify;
+    margin: 0 14px;
+}
+
+.WishlistProduct .c1 {
+    width: 40%;
+}
+
+.WishlistProduct .c2 {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.WishlistProduct .c3 {
+    width: 20%;
+}
+
+.WishlistProduct .c4 {
+    width: 15%;
+}
+
+.WishlistProduct .wl-product-type img {
+    width: 120px;
+}
+
+.WishlistProduct .wl-product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+    text-align: center;
+}
+
+.WishlistProduct .wl-product-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    right: 10px;
+}
+
+.WishlistProduct .wl-product-cart-button {
+    width: 50px;
+    height: 45px;
+    border-radius: 12px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.WishlistProduct .wl-product-cart-button:hover {
+    cursor: pointer;
+    background-color: #daffe9;
+    transition: 0.2s;
+}
+
+.WishlistProduct .wl-product-remove-button {
+    width: 50px;
+    height: 45px;
+    border-radius: 12px;
+    border: 2px solid #ff4838;
+    background-color: transparent;
+    color: #fd2e1b;
+}
+
+.WishlistProduct .wl-product-remove-button:hover {
+    cursor: pointer;
+    background-color: #fef2f2;
+    transition: 0.2s;
+}
+
+.WishlistProduct .wl-product-button-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.WishlistProduct {
+}
+.WishlistProduct {
+}

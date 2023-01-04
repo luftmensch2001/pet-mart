@@ -1,0 +1,19 @@
+.NotFound {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.NotFound span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color-primary);
+    margin-top: 40px;
+}
+
+.NotFound img {
+    width: min(400px, 40%);
+}

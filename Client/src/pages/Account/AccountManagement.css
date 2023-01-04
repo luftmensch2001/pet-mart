@@ -1,0 +1,75 @@
+.AccountManagement {
+    width: 900px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.AccountManagement .account-img {
+    width: 400px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+}
+
+.AccountManagement .account-info {
+    width: 500px;
+}
+
+.AccountManagement .account-head {
+    display: flex;
+    align-items: center;
+}
+
+.AccountManagement .account-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+}
+
+.AccountManagement .account-name {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+    margin-left: 20px;
+}
+
+.AccountManagement .account-change-container {
+    width: 500px;
+}
+
+.AccountManagement .account-change-item {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.AccountManagement .accout-input {
+    height: 40px;
+    font-size: 1.4rem;
+    padding: 2px 12px;
+    border: 1px solid lightgray;
+    outline: none;
+    width: 200px;
+    font-weight: 600;
+    border-radius: 12px;
+    color: var(--text-color-primary);
+    box-shadow: -2px 2px 2px 2px rgb(0 0 0 /3%);
+}
+
+.AccountManagement label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+}
+
+.AccountManagement .change-password-button {
+    border-radius: 12px;
+    height: 45px;
+    width: 224px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 15%;
+}

@@ -1,0 +1,55 @@
+.StatusLabel {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 16px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.StatusLabel.type1 {
+    background-color: rgb(253, 240, 222);
+}
+
+.StatusLabel.type2 {
+    background-color: #eff4ff;
+}
+
+.StatusLabel.type3 {
+    background-color: #ecfdf3;
+}
+
+.StatusLabel.type4 {
+    background-color: #fef2f2;
+}
+
+.StatusLabel.type1 span,
+.StatusLabel.type1 .status-icon {
+    color: rgb(255, 164, 45);
+}
+
+.StatusLabel.type2 span,
+.StatusLabel.type2 .status-icon {
+    color: #87abf7;
+}
+
+.StatusLabel.type3 span,
+.StatusLabel.type3 .status-icon {
+    color: #2d9367;
+}
+
+.StatusLabel.type4 span,
+.StatusLabel.type4 .status-icon {
+    color: #fd2e1b;
+}
+
+.StatusLabel .status-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+}
+
+.StatusLabel .status-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+}

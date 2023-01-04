@@ -1,0 +1,52 @@
+.VoucherStatus {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 12px;
+}
+
+.VoucherStatus .status-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.VoucherStatus .status-name {
+}
+
+.VoucherStatus.type1 span,
+.VoucherStatus.type1 .status-icon {
+    color: rgb(255, 164, 45) !important;
+}
+
+.VoucherStatus.type2 span,
+.VoucherStatus.type2 .status-icon {
+    color: #2d9367 !important;
+}
+
+.VoucherStatus.type3 span,
+.VoucherStatus.type3 .status-icon {
+    color: #7c7c7c !important;
+}
+
+.VoucherStatus.type4 span,
+.VoucherStatus.type4 .status-icon {
+    color: #fd2e1b !important;
+}
+
+.VoucherStatus.type1 {
+    background-color: rgb(255, 244, 229);
+}
+
+.VoucherStatus.type2 {
+    background-color: #d2ffeb;
+}
+
+.VoucherStatus.type3 {
+    background-color: #f4f4f4;
+}
+
+.VoucherStatus.type4 {
+    background-color: #fef2f2;
+}

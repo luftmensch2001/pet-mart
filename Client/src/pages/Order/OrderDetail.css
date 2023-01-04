@@ -1,0 +1,32 @@
+.OrderDetail .checkout-container .button-wrapper {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.OrderDetail .checkout-container .button-wrapper button {
+    border-radius: 8px;
+    padding: 14px 24px;
+}
+
+.OrderDetail .checkout-container .button-wrapper .button-red {
+    margin-left: 48px;
+    background-color: rgb(253, 68, 68);
+}
+
+.OrderDetail .title-of-zone {
+    font-size: 2rem !important;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    height: 30px;
+}
+
+.OrderDetail .title-of-zone:first-child {
+    margin-top: 10px;
+}
+
+.OrderDetail .checkout-bill-container {
+    margin-top: 55px !important;
+}
