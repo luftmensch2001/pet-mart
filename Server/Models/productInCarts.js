@@ -8,7 +8,7 @@ const ProductInCartsSchema = new schema({
   },
   productId: {
     type: schema.Types.ObjectId,
-    ref: "products",
+    ref: "productPets",
   },
   count: {
     type: Number,

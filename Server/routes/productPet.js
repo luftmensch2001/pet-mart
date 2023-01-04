@@ -2,21 +2,21 @@ const express = require("express");
 const multer = require("multer");
 const router = express.Router();
 
-const Product = require("../models/products");
+const ProductPet = require("../models/productPets");
 
 const uploadMultipartForm = multer().none();
 
-router.get("/", (req, res) => res.send("PRODUCT ROUTE"));
+router.get("/", (req, res) => res.send("PRODUCTPET ROUTE"));
 
-// @route POST api/products/create
-// @desc Create product
+// @route POST api/productPets/create
+// @desc Create productPet
 // @access Public
 router.post("/create", async (req, res) => {
   try {
     uploadMultipartForm(req, res, function (err) {
       const {
         accountId,
-        nameProduct,
+        nameProductPet,
         price,
         salePrice,
         describe,
@@ -24,15 +24,15 @@ router.post("/create", async (req, res) => {
         imageURLs,
       } = req.body;
 
-      if (!accountId || !nameProduct || !price || !describe || !type)
+      if (!accountId || !nameProductPet || !price || !describe || !type)
         return res
           .status(400)
           .json({ success: false, message: "Missing information" });
 
       const discountValue = Number(salePrice) - Number(price);
-      const newProduct = new Product({
+      const newProductPet = new ProductPet({
         accountId,
-        nameProduct,
+        nameProductPet,
         price,
         salePrice,
         discountValue,
@@ -43,11 +43,11 @@ router.post("/create", async (req, res) => {
 
       //All good
 
-      newProduct.save();
+      newProductPet.save();
       res.json({
         success: true,
-        message: "Product created successfully",
-        productID: newProduct._id,
+        message: "ProductPet created successfully",
+        productID: newProductPet._id,
       });
     });
   } catch (error) {
@@ -59,13 +59,13 @@ router.post("/create", async (req, res) => {
   }
 });
 
-// @route GET api/products/all
-// @desc Get All Product
+// @route GET api/productPets/all
+// @desc Get All ProductPet
 // @access Public
 router.get("/all", async (req, res) => {
   try {
-    const products = await Product.find({state: { $ne: "deleted" }});
-    res.json({ success: true, products });
+    const productPets = await ProductPet.find({ state: { $ne: "deleted" } });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -75,15 +75,18 @@ router.get("/all", async (req, res) => {
   }
 });
 
-// @route GET api/products/byAccountId
-// @desc Get Product by accountId
+// @route GET api/productPets/byAccountId
+// @desc Get ProductPet by accountId
 // @access Public
 router.get("/byAccountId", async (req, res) => {
   const accountId = req.query.accountId;
   try {
     console.log(accountId);
-    const products = await Product.find({ accountId,state: { $ne: "deleted" }, });
-    res.json({ success: true, products });
+    const productPets = await ProductPet.find({
+      accountId,
+      state: { $ne: "deleted" },
+    });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -93,14 +96,17 @@ router.get("/byAccountId", async (req, res) => {
   }
 });
 
-// @route GET api/products/byProductId
-// @desc Get Product by productId
+// @route GET api/productPets/byProductPetId
+// @desc Get ProductPet by productPetId
 // @access Public
-router.get("/byProductId", async (req, res) => {
-  const productId = req.query.productId;
+router.get("/byProductPetId", async (req, res) => {
+  const productPetId = req.query.productPetId;
   try {
-    const product = await Product.findOne({ _id: productId,state: { $ne: "deleted" }, });
-    res.json({ success: true, product });
+    const productPet = await ProductPet.findOne({
+      _id: productPetId,
+      state: { $ne: "deleted" },
+    });
+    res.json({ success: true, productPet });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -110,33 +116,33 @@ router.get("/byProductId", async (req, res) => {
   }
 });
 
-// @route Delete api/products/byProductId
-// @desc delete 1 product
+// @route Delete api/productPets/byProductPetId
+// @desc delete 1 productPet
 // @access Public
-router.delete("/byProductId", async (req, res) => {
-  const productId = req.query.productId;
-  console.log("productId: ", productId);
+router.delete("/byProductPetId", async (req, res) => {
+  const productPetId = req.query.productPetId;
+  console.log("productPetId: ", productPetId);
 
   try {
     const state = "deleted";
-    Product.findOneAndUpdate(
-      { _id: productId },
+    ProductPet.findOneAndUpdate(
+      { _id: productPetId },
       {
         state,
       },
       { new: true },
-      function (error, product) {
-        console.log(product);
-        if (!product) {
+      function (error, productPet) {
+        console.log(productPet);
+        if (!productPet) {
           res.status(404).json({
             success: false,
-            message: "product not found",
+            message: "productPet not found",
           });
         } else {
           res.status(200).json({
             success: true,
-            message: " Updated product state to  deleted",
-            product,
+            message: " Updated product Pet state to  deleted",
+            productPet,
           });
         }
       }
@@ -150,24 +156,24 @@ router.delete("/byProductId", async (req, res) => {
   }
 });
 
-// @route POST api/products/changeState
+// @route POST api/productPets/changeState
 // @desc change state /////////////////////// deleted
 // @access Public
 router.post("/changeState", async (req, res) => {
-  const productId = req.query.productId;
+  const productPetId = req.query.productPetId;
   const state = req.query.state;
   console.log("productId: ", productId);
 
   try {
-    Product.findOneAndUpdate(
-      { _id: productId },
+    ProductPet.findOneAndUpdate(
+      { _id: productPetId },
       {
         state,
       },
       { new: true },
-      function (error, product) {
-        console.log(product);
-        if (!product) {
+      function (error, productPet) {
+        console.log(productPet);
+        if (!productPet) {
           res.status(404).json({
             success: false,
             message: "product not found",
@@ -175,8 +181,8 @@ router.post("/changeState", async (req, res) => {
         } else {
           res.status(200).json({
             success: true,
-            message: " Updated product state to  deleted",
-            product,
+            message: " Updated productPet state to  deleted",
+            productPet,
           });
         }
       }
@@ -190,16 +196,16 @@ router.post("/changeState", async (req, res) => {
   }
 });
 
-// @route Delete api/products/byAccountId
-// @desc delete all product by accountId
+// @route Delete api/productPets/byAccountId
+// @desc delete all product Pet by accountId
 // @access Public
 router.delete("/byAccountId", async (req, res) => {
   const { accountId } = req.body;
   try {
-    await Product.deleteMany({ accountId: accountId });
+    await ProductPet.deleteMany({ accountId: accountId });
     res.json({
       success: true,
-      message: "Deleted Products accountId: " + accountId,
+      message: "Deleted ProductPets accountId: " + accountId,
     });
   } catch (error) {
     console.log(error);
@@ -210,15 +216,15 @@ router.delete("/byAccountId", async (req, res) => {
   }
 });
 
-// @route PUT api/products/update
-// @desc update Product
+// @route PUT api/productPets/update
+// @desc update Product Pet
 // @access Public
 router.put("/update", async (req, res) => {
   try {
     uploadMultipartForm(req, res, function (err) {
       const {
-        productId,
-        nameProduct,
+        productPetId,
+        nameProductPet,
         price,
         salePrice,
         describe,
@@ -228,10 +234,10 @@ router.put("/update", async (req, res) => {
         countAvailability,
         countStar,
       } = req.body;
-      Product.findOneAndUpdate(
-        { _id: productId },
+      ProductPet.findOneAndUpdate(
+        { _id: productPetId },
         {
-          nameProduct: nameProduct,
+          nameProductPet: nameProductPet,
           price: price,
           salePrice: salePrice,
           discountValue: Number(salePrice - price),
@@ -243,18 +249,18 @@ router.put("/update", async (req, res) => {
           countStar: countStar,
         },
         { new: true },
-        function (error, productt) {
-          console.log(productt);
-          if (!productt) {
+        function (error, productPet) {
+          console.log(productPet);
+          if (!productPet) {
             res.status(400).json({
               success: false,
-              message: "product not found",
+              message: "productPet not found",
             });
           } else {
             res.status(200).json({
               success: true,
-              message: " Updated product",
-              productt,
+              message: " Updated productPet",
+              productPet,
             });
           }
         }
@@ -270,32 +276,32 @@ router.put("/update", async (req, res) => {
   }
 });
 
-// @route PUT api/products/upSoldCount
+// @route PUT api/productPets/upSoldCount
 // @desc update
 // @access Public
 router.put("/upSoldCount", async (req, res) => {
   try {
-    const { productId, count } = req.body;
-    const oldProduct = await Product.findOne({ _id: productId });
-    const newCount = oldProduct.countSold + count;
-    Product.findOneAndUpdate(
-      { _id: productId },
+    const { productPetId, count } = req.body;
+    const oldProductPet = await ProductPet.findOne({ _id: productPetId });
+    const newCount = oldProductPet.countSold + count;
+    ProductPet.findOneAndUpdate(
+      { _id: productPetId },
       {
         countSold: newCount,
       },
       { new: true },
-      function (error, product) {
-        console.log(product);
-        if (!product) {
+      function (error, productPet) {
+        console.log(productPet);
+        if (!productPet) {
           res.status(400).json({
             success: false,
-            message: "product not found",
+            message: "productPet not found",
           });
         } else {
           res.status(200).json({
             success: true,
-            message: " Updated product",
-            product,
+            message: " Updated productPet",
+            productPet,
           });
         }
       }
@@ -310,20 +316,20 @@ router.put("/upSoldCount", async (req, res) => {
   }
 });
 
-// @route GET api/products/populate
-// @desc Get Count Product populate
+// @route GET api/productPets/populate
+// @desc Get Count ProductPet populate
 // @access Public
 router.get("/populate", async (req, res) => {
   const count = req.query.count;
   const accountId = req.query.accountId;
   try {
-    const products = await Product.find({
+    const productPets = await ProductPet.find({
       accountId: { $ne: accountId },
       state: { $ne: "deleted" },
     })
       .limit(count)
       .sort({ countSold: -1 });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -333,20 +339,20 @@ router.get("/populate", async (req, res) => {
   }
 });
 
-// @route GET api/products/allPopulate
-// @desc Get Count Product populate all catalog
+// @route GET api/productPets/allPopulate
+// @desc Get Count ProductPet populate all catalog
 // @access Public
 router.get("/allPopulate", async (req, res) => {
   const count = req.query.count;
   const accountId = req.query.accountId;
   try {
-    const products = await Product.find({
+    const productPets = await ProductPet.find({
       accountId: { $ne: accountId },
       state: { $ne: "deleted" },
     })
       .limit(count)
       .sort({ countSold: -1 });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -355,8 +361,8 @@ router.get("/allPopulate", async (req, res) => {
     });
   }
 });
-// @route GET api/products/populateCatalog
-// @desc Get Count Product populate
+// @route GET api/productPets/populateCatalog
+// @desc Get Count ProductPet populate
 // @access Public
 router.get("/populateCatalog", async (req, res) => {
   const count = req.query.count;
@@ -364,14 +370,14 @@ router.get("/populateCatalog", async (req, res) => {
   console.log("type: ", type);
   const accountId = req.query.accountId;
   try {
-    const products = await Product.find({
+    const productPets = await ProductPet.find({
       type,
       accountId: { $ne: accountId },
       state: { $ne: "deleted" },
     })
       .limit(count)
       .sort({ countSold: -1 });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -381,20 +387,20 @@ router.get("/populateCatalog", async (req, res) => {
   }
 });
 
-// @route GET api/products/allNewest
-// @desc Get Count Product newest all catalog
+// @route GET api/productPets/allNewest
+// @desc Get Count ProductPet newest all catalog
 // @access Public
 router.get("/allNewest", async (req, res) => {
   const count = req.query.count;
   const accountId = req.query.accountId;
   try {
-    const products = await Product.find({
+    const productPets = await ProductPet.find({
       accountId: { $ne: accountId },
       state: { $ne: "deleted" },
     })
       .limit(count)
       .sort({ createdAt: -1 });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -403,22 +409,22 @@ router.get("/allNewest", async (req, res) => {
     });
   }
 });
-// @route GET api/products/newestCatalog
-// @desc Get Count Product newest
+// @route GET api/productPets/newestCatalog
+// @desc Get Count ProductPet newest
 // @access Public
 router.get("/newestCatalog", async (req, res) => {
   const count = req.query.count;
   const type = req.query.catalog;
   const accountId = req.query.accountId;
   try {
-    const products = await Product.find({
+    const productPets = await ProductPet.find({
       type,
       accountId: { $ne: accountId },
       state: { $ne: "deleted" },
     })
       .limit(count)
       .sort({ createdAt: -1 });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -428,20 +434,20 @@ router.get("/newestCatalog", async (req, res) => {
   }
 });
 
-// @route GET api/products/allDiscount
-// @desc Get Count Product discount all catalog
+// @route GET api/productPets/allDiscount
+// @desc Get Count ProductPet discount all catalog
 // @access Public
 router.get("/allDiscount", async (req, res) => {
   const count = req.query.count;
   const accountId = req.query.accountId;
   try {
-    const products = await Product.find({
+    const productPets = await ProductPet.find({
       accountId: { $ne: accountId },
       state: { $ne: "deleted" },
     })
       .limit(count)
       .sort({ discountValue: -1 });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -450,22 +456,22 @@ router.get("/allDiscount", async (req, res) => {
     });
   }
 });
-// @route GET api/products/discountCatalog
-// @desc Get Count Product discount
+// @route GET api/productPets/discountCatalog
+// @desc Get Count ProductPet discount
 // @access Public
 router.get("/discountCatalog", async (req, res) => {
   const count = req.query.count;
   const type = req.query.catalog;
   const accountId = req.query.accountId;
   try {
-    const products = await Product.find({
+    const productPets = await ProductPet.find({
       type,
       accountId: { $ne: accountId },
       state: { $ne: "deleted" },
     })
       .limit(count)
       .sort({ discountValue: -1 });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -475,15 +481,15 @@ router.get("/discountCatalog", async (req, res) => {
   }
 });
 
-// @route GET api/products/randomInCatalog
-// @desc Get Count Product random in Catalog
+// @route GET api/productPets/randomInCatalog
+// @desc Get Count ProductPet random in Catalog
 // @access Public
 router.get("/randomInCatalog", async (req, res) => {
   const count = req.query.count;
   const accountId = req.query.accountId;
   const type = req.query.catalog;
   try {
-    const products = await Product.aggregate([
+    const productPets = await ProductPet.aggregate([
       { $sample: { size: Number(count) } },
       {
         $match: {
@@ -493,7 +499,7 @@ router.get("/randomInCatalog", async (req, res) => {
         },
       },
     ]);
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -503,17 +509,17 @@ router.get("/randomInCatalog", async (req, res) => {
   }
 });
 
-// @route GET api/products/allByKeyWord
-// @desc Get All Product By key word
+// @route GET api/productPets/allByKeyWord
+// @desc Get All ProductPet By key word
 // @access Public
 router.get("/allByKeyWord", async (req, res) => {
   const keyWord = req.query.keyword;
   try {
-    const products = await Product.find({
-      nameProduct: { $regex: keyWord, $options: "six" },
+    const productPets = await ProductPet.find({
+      nameProductPet: { $regex: keyWord, $options: "six" },
       state: { $ne: "deleted" },
     });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -523,19 +529,19 @@ router.get("/allByKeyWord", async (req, res) => {
   }
 });
 
-// @route GET api/products/catalogByKeyWord
-// @desc Get (Catalog) Product By key word
+// @route GET api/productPets/catalogByKeyWord
+// @desc Get (Catalog) ProductPet By key word
 // @access Public
 router.get("/catalogByKeyWord", async (req, res) => {
   const keyWord = req.query.keyword;
   const type = req.query.type;
   try {
-    const products = await Product.find({
-      nameProduct: { $regex: keyWord, $options: "six" },
+    const productPets = await ProductPet.find({
+      nameProductPet: { $regex: keyWord, $options: "six" },
       type,
       state: { $ne: "deleted" },
     });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -545,20 +551,20 @@ router.get("/catalogByKeyWord", async (req, res) => {
   }
 });
 
-// @route GET api/products/allByKeyWordMinMax
-// @desc Get All Product By key word Min Max
+// @route GET api/productPets/allByKeyWordMinMax
+// @desc Get All ProductPet By key word Min Max
 // @access Public
 router.get("/allByKeyWordMinMax", async (req, res) => {
   const keyWord = req.query.keyWord;
   const min = req.query.min;
   const max = req.query.max;
   try {
-    const products = await Product.find({
-      nameProduct: { $regex: keyWord },
+    const productPets = await ProductPet.find({
+      nameProductPet: { $regex: keyWord },
       price: { $gt: Number(min), $lt: Number(max) },
       state: { $ne: "deleted" },
     });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -567,8 +573,8 @@ router.get("/allByKeyWordMinMax", async (req, res) => {
     });
   }
 });
-// @route GET api/products/catalogByKeyWordMinMax
-// @desc Get (Catalog) Product By key word Min Max
+// @route GET api/productPets/catalogByKeyWordMinMax
+// @desc Get (Catalog) ProductPet By key word Min Max
 // @access Public
 router.get("/catalogByKeyWordMinMax", async (req, res) => {
   const keyWord = req.query.keyWord;
@@ -576,13 +582,13 @@ router.get("/catalogByKeyWordMinMax", async (req, res) => {
   const min = req.query.min;
   const max = req.query.max;
   try {
-    const products = await Product.find({
-      nameProduct: { $regex: keyWord },
+    const productPets = await ProductPet.find({
+      nameProductPet: { $regex: keyWord },
       type,
       price: { $gt: Number(min), $lt: Number(max) },
       state: { $ne: "deleted" },
     });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -592,20 +598,20 @@ router.get("/catalogByKeyWordMinMax", async (req, res) => {
   }
 });
 
-// @route GET api/products/allByKeyWordMinMaxStar
-// @desc Get All Product By key word Min Max Star
+// @route GET api/productPets/allByKeyWordMinMaxStar
+// @desc Get All ProductPet By key word Min Max Star
 // @access Public
 router.get("/allByKeyWordMinMaxStar", async (req, res) => {
   const keyWord = req.query.keyWord;
   const min = req.query.min;
   const max = req.query.max;
   try {
-    const products = await Product.find({
-      nameProduct: { $regex: keyWord },
+    const productPets = await ProductPet.find({
+      nameProductPet: { $regex: keyWord },
       countStar: { $gt: Number(min), $lt: Number(max) },
       state: { $ne: "deleted" },
     });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -614,8 +620,8 @@ router.get("/allByKeyWordMinMaxStar", async (req, res) => {
     });
   }
 });
-// @route GET api/products/catalogByKeyWordMinMaxStar
-// @desc Get (Catalog) Product By key word Min Max Star
+// @route GET api/productPets/catalogByKeyWordMinMaxStar
+// @desc Get (Catalog) ProductPet By key word Min Max Star
 // @access Public
 router.get("/catalogByKeyWordStar", async (req, res) => {
   const keyWord = req.query.keyWord;
@@ -623,13 +629,13 @@ router.get("/catalogByKeyWordStar", async (req, res) => {
   const min = req.query.min;
   const max = req.query.max;
   try {
-    const products = await Product.find({
+    const productPets = await ProductPet.find({
       nameProduct: { $regex: keyWord },
       type,
       countStar: { $gt: Number(min), $lt: Number(max) },
       state: { $ne: "deleted" },
     });
-    res.json({ success: true, products });
+    res.json({ success: true, productPets });
   } catch (error) {
     console.log(error);
     res.status(500).json({
