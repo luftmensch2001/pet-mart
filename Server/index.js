@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const accountRouter = require("./routes/account");
 const productRouter = require("./routes/product");
+const productRouterPet = require("./routes/productPet");
 const imageProductRouter = require("./routes/imageProduct");
 const colorRouter = require("./routes/color");
 const productInCartRouter = require("./routes/productInCart");
@@ -19,19 +20,19 @@ const productInBillRouter = require("./routes/productInBill");
 console.log(process.env.DB_USERNAME);
 
 const connectDB = async () => {
-    try {
-        await mongoose.connect(
-            `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.rbbiuxh.mongodb.net/?retryWrites=true&w=majority`,
-            {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-            }
-        );
-        console.log("MongoDB connected");
-    } catch (error) {
-        console.log(error.message);
-        process.exit(1);
-    }
+  try {
+    await mongoose.connect(
+      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.rbbiuxh.mongodb.net/?retryWrites=true&w=majority`,
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    );
+    console.log("MongoDB connected");
+  } catch (error) {
+    console.log(error.message);
+    process.exit(1);
+  }
 };
 
 connectDB();
@@ -45,6 +46,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/accounts", accountRouter);
 app.use("/api/products", productRouter);
+app.use("/api/productPets", productRouterPet);
 app.use("/api/imageProducts", imageProductRouter);
 app.use("/api/colors", colorRouter);
 app.use("/api/productInCarts", productInCartRouter);
