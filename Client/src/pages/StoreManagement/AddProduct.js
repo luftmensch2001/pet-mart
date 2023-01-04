@@ -17,7 +17,7 @@ const AddProduct = () => {
     const [mainImage, setMainImage] = useState(null);
     const [otherImage, setOtherImage] = useState([]);
     const [productName, setProductName] = useState("");
-    const [productCategory, setProductCategory] = useState("Điện thoại");
+    const [productCategory, setProductCategory] = useState("Thức ăn cho Chó");
     const [productPrice, setProductPrice] = useState("");
     const [productSalePrice, setProductSalePrice] = useState("");
     const [productDescription, setProductDescription] = useState("");
