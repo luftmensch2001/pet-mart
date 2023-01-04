@@ -163,10 +163,10 @@ function Wishlist({ UpdateNavbar }) {
                             item.imageURL = res.data.product.imageURLs[0];
                             item.price = res.data.product.price;
                             item.countStar = res.data.product.countStar;
+                            setData(favoriteProducts.slice(0));
+                            setAllProduct(favoriteProducts.slice(0));
                             counter++;
                             if (counter === favoriteProducts.length) {
-                                setData(favoriteProducts);
-                                setAllProduct(favoriteProducts);
                                 setIsLoaded(true);
                             }
                         })

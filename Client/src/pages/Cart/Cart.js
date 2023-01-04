@@ -104,16 +104,19 @@ const Cart = ({ SetCartData, SetDiscountData, UpdateNavbar }) => {
             return;
         }
         if (coin > coinData) {
-            toast.error("Số E-Coin tối đa của bạn là " + coinData.toString(), {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            });
+            toast.error(
+                "Số Pet-Coin tối đa của bạn là " + coinData.toString(),
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                }
+            );
             return;
         }
         setCoinUsed(parseInt(coin));
@@ -344,7 +347,7 @@ const Cart = ({ SetCartData, SetDiscountData, UpdateNavbar }) => {
                             <input
                                 className="coupon-input"
                                 type="number"
-                                placeholder="Sử dụng E-Coin"
+                                placeholder="Sử dụng Pet-Coin"
                                 value={coin}
                                 onChange={(e) => setCoin(e.target.value)}
                             />

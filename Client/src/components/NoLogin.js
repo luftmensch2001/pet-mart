@@ -12,7 +12,7 @@ const NoLogin = () => {
             </span>
             <span>
                 Hãy <span className="green-text">Đăng nhập</span> để trải nghiệm
-                toàn bộ tính năng của E -
+                toàn bộ tính năng của Pet -
                 <span className="green-text"> Mart</span>
             </span>
             <Link to="/login">

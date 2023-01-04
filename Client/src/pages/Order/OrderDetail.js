@@ -80,7 +80,7 @@ const OrderDetail = ({ isBuyOrder }) => {
                 message =
                     "Đã nhận hàng thành công! Bạn nhận được " +
                     Math.round(billData.totalPrice / 100).toString() +
-                    " E-Coin";
+                    " Pet-Coin";
                 UpdateCoin();
                 break;
             case "4":

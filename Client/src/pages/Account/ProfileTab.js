@@ -145,7 +145,7 @@ function ProfileTab() {
                     <span className="profile-name">{userData.fullName}</span>
 
                     <div className="profile-left">
-                        <span className="coin-label green-text">E-Coin</span>
+                        <span className="coin-label green-text">Pet-Coin</span>
                         <p className="profile-left-label">Tên đăng nhập</p>
                         <p className="profile-left-label">Họ và tên</p>
                         <p className="profile-left-label">Địa chỉ E-mail</p>

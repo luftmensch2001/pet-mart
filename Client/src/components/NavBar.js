@@ -38,7 +38,7 @@ function NavBar({ wishlistCount, cartCount, setWishlistCount, setCartCount }) {
                 <div className="content navbar-container">
                     <Link to="/" className="navbar-logo-link">
                         <span className="navbar-logo">
-                            E-<span className="green-text">Mart</span>
+                            Pet-<span className="green-text">Mart</span>
                         </span>
                     </Link>
                     <div className="navbar-search-container">
@@ -48,30 +48,30 @@ function NavBar({ wishlistCount, cartCount, setWishlistCount, setCartCount }) {
                             onChange={(e) => setCategoryValue(e.target.value)}
                         >
                             <option value={"All"}>Tất cả danh mục</option>
-                            <option value={"Điện thoại"}>Điện thoại</option>
-                            <option value={"Laptop"}>Laptop</option>
-                            <option value={"Thời trang nam"}>
-                                Thời trang nam
+                            <option value={"Thức ăn cho Chó"}>
+                                Thức ăn cho Chó
                             </option>
-                            <option value={"Thời trang nữ"}>
-                                Thời trang nữ
+                            <option value={"Trang phục cho Chó"}>
+                                Trang phục cho Chó
                             </option>
-                            <option value={"Trang sức"}>Trang sức</option>
-                            <option value={"Thiết bị điện tử"}>
-                                Thiết bị điện tử
+                            <option value={"Đồ chơi cho Chó"}>
+                                Đồ chơi cho Chó
                             </option>
-                            <option value={"Nhà bếp"}>Nhà bếp</option>
-                            <option value={"Giày nam"}>Giày nam</option>
-                            <option value={"Giày nữ"}>Giày nữ</option>
-                            <option value={"Sách"}>Sách</option>
-                            <option value={"Đồng hồ"}>Đồng hồ</option>
-                            <option value={"Cho bé"}>Cho bé</option>
-                            <option value={"Sức khoẻ"}>Sức khoẻ</option>
-                            <option value={"Mỹ phẩm"}>Mỹ phẩm</option>
-                            <option value={"Dụng cụ gia đình"}>
-                                Dụng cụ gia đình
+                            <option value={"Thức ăn cho Mèo"}>
+                                Thức ăn cho Mèo
                             </option>
-                            <option value={"Khác"}>Khác</option>
+                            <option value={"Trang phục cho Mèo"}>
+                                Trang phục cho Mèo
+                            </option>
+                            <option value={"Đồ chơi cho Mèo"}>
+                                Đồ chơi cho Mèo
+                            </option>
+                            <option value={"Chuồng, lồng nuôi"}>
+                                Chuồng, lồng nuôi
+                            </option>
+                            <option value={"Dành cho Chuột"}>
+                                Dành cho Chuột
+                            </option>
                         </select>
                         <input
                             className="navbar-search-input"

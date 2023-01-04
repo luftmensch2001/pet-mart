@@ -4,8 +4,8 @@
 }
 
 :root {
-    --primary-color: #44de87;
-    /* --primary-color: #fb836d; */
+    /* --primary-color: #44de87; */
+    --primary-color: #fb836d;
     --text-color-primary: #273f50;
     --text-color-secondary: #9b9b9b;
 }
@@ -151,7 +151,7 @@ input[type="number"] {
 }
 
 .pag-active {
-    background-color: #44de87;
+    background-color: var(--primary-color);
     color: #fff;
 }
 

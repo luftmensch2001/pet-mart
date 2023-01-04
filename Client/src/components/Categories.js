@@ -2,22 +2,14 @@ import React from "react";
 import "./Categories.css";
 import { useNavigate, createSearchParams } from "react-router-dom";
 
-import thoitrangnam from "../assets/images/catagories/thoitrangnam.png";
-import thoitrangnu from "../assets/images/catagories/thoitrangnu.png";
-import dongho from "../assets/images/catagories/dongho.png";
-import dungcugiadinh from "../assets/images/catagories/dungcugiadinh.png";
-import embe from "../assets/images/catagories/embe.png";
-import giaynam from "../assets/images/catagories/giaynam.png";
-import giaynu from "../assets/images/catagories/giaynu.png";
-import lamdep from "../assets/images/catagories/lamdep.png";
-import laptop from "../assets/images/catagories/laptop.png";
-import nhabep from "../assets/images/catagories/nhabep.png";
-import other from "../assets/images/catagories/other.png";
-import sach from "../assets/images/catagories/sach.png";
-import smartphone from "../assets/images/catagories/smartphone.png";
-import suckhoe from "../assets/images/catagories/suckhoe.png";
-import thietbidientu from "../assets/images/catagories/thietbidientu.png";
-import trangsuc from "../assets/images/catagories/trangsuc.png";
+import thucanchocho from "../assets/images/catagories/thucancuacho.jpg";
+import thucanchomeo from "../assets/images/catagories/thucancuameo.jpg";
+import trangphuccho from "../assets/images/catagories/trangphuccho.png";
+import trangphucmeo from "../assets/images/catagories/trangphucmeo.jpg";
+import dochoicho from "../assets/images/catagories/dochoicho.png";
+import dochoimeo from "../assets/images/catagories/dochoimeo.jpg";
+import chuong from "../assets/images/catagories/chuongmeo.jpg";
+import chuot from "../assets/images/catagories/mouse.jpg";
 
 function Categories() {
     const navigate = useNavigate();
@@ -42,116 +34,76 @@ function Categories() {
             <div className="categories-list">
                 <div
                     className="category-item"
-                    onClick={() => GoToCategory("Thời trang nam")}
+                    onClick={() => GoToCategory("Thức ăn cho Chó")}
                 >
-                    <img className="category-img" src={thoitrangnam} alt="" />
-                    <span className="category-name">Thời trang nam</span>
+                    <img className="category-img" src={thucanchocho} alt="" />
+                    <span className="category-name">Thức ăn cho Chó</span>
                 </div>
 
                 <div
                     className="category-item"
-                    onClick={() => GoToCategory("Điện thoại")}
+                    onClick={() => GoToCategory("Trang phục cho Chó")}
                 >
-                    <img className="category-img" src={smartphone} alt="" />
-                    <span className="category-name">Điện thoại</span>
+                    <img className="category-img" src={trangphuccho} alt="" />
+                    <span className="category-name">
+                        Trang phục
+                        <br />
+                        cho Chó
+                    </span>
                 </div>
                 <div
                     className="category-item"
-                    onClick={() => GoToCategory("Laptop")}
+                    onClick={() => GoToCategory("Đồ chơi cho Chó")}
                 >
-                    <img className="category-img" src={laptop} alt="" />
-                    <span className="category-name">Laptop</span>
+                    <img className="category-img" src={dochoicho} alt="" />
+                    <span className="category-name">Đồ chơi cho Chó</span>
                 </div>
                 <div
                     className="category-item"
-                    onClick={() => GoToCategory("Thiết bị điện tử")}
+                    onClick={() => GoToCategory("Thức ăn cho Mèo")}
                 >
-                    <img className="category-img" src={thietbidientu} alt="" />
-                    <span className="category-name">Thiết bị điện tử</span>
+                    <img className="category-img" src={thucanchomeo} alt="" />
+                    <span className="category-name">
+                        Thức ăn
+                        <br />
+                        cho Mèo
+                    </span>
                 </div>
                 <div
                     className="category-item"
-                    onClick={() => GoToCategory("Giày nam")}
+                    onClick={() => GoToCategory("Trang phục cho Mèo")}
                 >
-                    <img className="category-img" src={giaynam} alt="" />
-                    <span className="category-name">Giày nam</span>
+                    <img className="category-img" src={trangphucmeo} alt="" />
+                    <span className="category-name">
+                        Trang phục
+                        <br />
+                        cho Mèo
+                    </span>
                 </div>
                 <div
                     className="category-item"
-                    onClick={() => GoToCategory("Sách")}
+                    onClick={() => GoToCategory("Đồ chơi cho Mèo")}
                 >
-                    <img className="category-img" src={sach} alt="" />
-                    <span className="category-name">Sách</span>
+                    <img className="category-img" src={dochoimeo} alt="" />
+                    <span className="category-name">Đồ chơi cho Mèo</span>
                 </div>
                 <div
                     className="category-item"
-                    onClick={() => GoToCategory("Đồng hồ")}
+                    onClick={() => GoToCategory("Chuồng, lồng nuôi")}
                 >
-                    <img className="category-img" src={dongho} alt="" />
-                    <span className="category-name">Đồng hồ</span>
+                    <img className="category-img" src={chuong} alt="" />
+                    <span className="category-name">
+                        Chuồng,
+                        <br />
+                        lồng nuôi
+                    </span>
                 </div>
                 <div
                     className="category-item"
-                    onClick={() => GoToCategory("Dụng cụ gia đình")}
+                    onClick={() => GoToCategory("Dành cho Chuột")}
                 >
-                    <img className="category-img" src={dungcugiadinh} alt="" />
-                    <span className="category-name">Dụng cụ gia đình</span>
-                </div>
-                <div
-                    className="category-item"
-                    onClick={() => GoToCategory("Thời trang nữ")}
-                >
-                    <img className="category-img" src={thoitrangnu} alt="" />
-                    <span className="category-name">Thời trang nữ</span>
-                </div>
-                <div
-                    className="category-item"
-                    onClick={() => GoToCategory("Trang sức")}
-                >
-                    <img className="category-img" src={trangsuc} alt="" />
-                    <span className="category-name">Trang sức</span>
-                </div>
-                <div
-                    className="category-item"
-                    onClick={() => GoToCategory("Mỹ phẩm")}
-                >
-                    <img className="category-img" src={lamdep} alt="" />
-                    <span className="category-name">Mỹ phẩm</span>
-                </div>
-                <div
-                    className="category-item"
-                    onClick={() => GoToCategory("Nhà bếp")}
-                >
-                    <img className="category-img" src={nhabep} alt="" />
-                    <span className="category-name">Nhà bếp</span>
-                </div>
-                <div
-                    className="category-item"
-                    onClick={() => GoToCategory("Giày nữ")}
-                >
-                    <img className="category-img" src={giaynu} alt="" />
-                    <span className="category-name">Giày nữ</span>
-                </div>
-                <div
-                    className="category-item"
-                    onClick={() => GoToCategory("Sức khoẻ")}
-                >
-                    <img className="category-img" src={suckhoe} alt="" />
-                    <span className="category-name">Sức khoẻ</span>
-                </div>
-                <div
-                    className="category-item"
-                    onClick={() => GoToCategory("Cho bé")}
-                >
-                    <img className="category-img" src={embe} alt="" />
-                    <span className="category-name">Cho bé</span>
-                </div>
-                <div
-                    className="category-item"
-                    onClick={() => GoToCategory("Khác")}
-                >
-                    <img className="category-img" src={other} alt="" />
-                    <span className="category-name">Khác</span>
+                    <img className="category-img" src={chuot} alt="" />
+                    <span className="category-name">Dành cho Chuột</span>
                 </div>
             </div>
         </div>

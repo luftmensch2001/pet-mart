@@ -8,7 +8,7 @@ import RecommendCategories from "./RecommendCategories";
 import Recommend from "../../components/Recommend";
 import Footer from "../../components/Footer";
 
-import banner from "../../assets/images/5323800.jpg";
+import banner from "../../assets/images/banner.jpg";
 
 function Home({ UpdateNavbar }) {
     return (
@@ -16,7 +16,6 @@ function Home({ UpdateNavbar }) {
             <img src={banner} className="home-banner" alt="" />
             <Categories />
             <PopularProduct UpdateNavbar={UpdateNavbar} />
-            <RecommendCategories />
             <Recommend />
         </div>
     );
